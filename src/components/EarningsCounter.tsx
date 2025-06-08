@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import AnimatedNumber from "./AnimatedNumber";
 import { Settings } from "../types";
 import {
   formatCurrency,
@@ -45,10 +44,9 @@ const EarningsCounter: React.FC<EarningsCounterProps> = ({ settings }) => {
     <div className="flex flex-col items-center justify-center space-y-6">
       {/* Main earnings counter */}
       <div className="text-center">
-        <AnimatedNumber
-          value={currentEarnings}
-          className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white font-mono"
-        />
+        <div className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white font-mono">
+          {formatCurrency(currentEarnings)}
+        </div>
       </div>
 
       {/* Progress bar */}
